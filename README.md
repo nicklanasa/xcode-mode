@@ -2,6 +2,21 @@
 
 **xcode-mode** is a minor mode for Emacs to perform Xcode like actions in your iOS projects.
 
+## Installation
+
+Requires [Cask](https://github.com/cask/cask)
+
+```
+git clone https://github.com/nicklanasa/xcode-mode.git
+```
+
+Then, run `cask` to install dependencies:
+
+```
+cd xcode-mode
+cask
+```
+
 ## Keybindings
 
 All keybindings start with `C-c C-x`. All functions in xcode-mode have a two-letter mnemonic shortcut, for instance, build-workspace is `bw`.
