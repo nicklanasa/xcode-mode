@@ -11,9 +11,6 @@
 (require 'espuds)
 (require 'ert)
 
-(Setup
- (xcode-add-keybindings-with-prefix "C-c C-x"))
-
 (Before
  (switch-to-buffer
   (get-buffer-create "*xcode-mode*"))

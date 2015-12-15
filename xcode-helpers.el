@@ -1,3 +1,5 @@
+(require 'subr-x)
+
 (defun xcode-find-workspaces-for-directory(directory)
   (mapcar #'string-trim
           (split-string

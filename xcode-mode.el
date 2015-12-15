@@ -47,6 +47,5 @@
 (define-key xcode-mode-map
   (kbd "C-c C-x tw") 'xcode-test-workspace)
 
-
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here
