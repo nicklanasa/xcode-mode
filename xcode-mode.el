@@ -46,6 +46,10 @@
   (kbd "C-c C-x bp") 'xcode-build-project)
 (define-key xcode-mode-map
   (kbd "C-c C-x tw") 'xcode-test-workspace)
+(define-key xcode-mode-map
+  (kbd "C-c C-x cw") 'xcode-clean-workspace)
+(define-key xcode-mode-map
+  (kbd "C-c C-x pi") 'xcode-pod-install)
 
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here

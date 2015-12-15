@@ -10,5 +10,6 @@ Here are all the keybindings:
 
 * `C-c C-x bw` builds the current project workspace.
 * `C-c C-x bp` builds the current project project.
-* `C-c C-x tw` cleans the current project workspace.
-
+* `C-c C-x cw` cleans the current project workspace.
+* `C-c C-x tw` tests the current project workspace.
+* `C-c C-x pi` runs `pod install`.

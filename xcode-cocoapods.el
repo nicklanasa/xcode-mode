@@ -1,6 +1,6 @@
 (require 'xcode-helpers)
 
-(defun xcode-run-pod-install()
+(defun xcode-pod-install()
   "Runs pod install."
   (interactive)
   (xcode-compile "pod install"))
