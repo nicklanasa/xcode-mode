@@ -16,12 +16,7 @@
   "Builds the Xcode workspace using xcodebuild."
   (interactive)
   (progn
-    (let* ((workspace 
-            (completing-read
-             "Select workspace: "
-             (if (not (xcode-find-workspaces-for-directory default-directory))
-                 (xcode-find-workspaces-for-directory ;; try one directory up
-                  (file-name-directory (directory-file-name default-directory)))) nil t)))
+    (let* ((workspace (xcode-select-workspace)))
       (xcode-compile (format "xcodebuild build -scheme %s -workspace %s -sdk %s -configuration %s"
 														 (completing-read
 															"Select scheme: "

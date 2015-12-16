@@ -27,6 +27,8 @@
 (require 'xcode-cleaning)
 (require 'xcode-cocoapods)
 (require 'xcode-testing)
+(require 'xcode-archiving)
+(require 'xcode-interface-builder)
 
 (defvar xcode-mode-map
   (make-sparse-keymap)
@@ -50,6 +52,11 @@
   (kbd "C-c C-x cw") 'xcode-clean-workspace)
 (define-key xcode-mode-map
   (kbd "C-c C-x pi") 'xcode-pod-install)
+(define-key xcode-mode-map
+  (kbd "C-c C-x os") 'xcode-open-storyboard)
+(define-key xcode-mode-map
+  (kbd "C-c C-x aw") 'xcode-archive-workspace)
+
 
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here

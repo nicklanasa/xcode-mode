@@ -1,5 +1,23 @@
 (require 'subr-x)
 
+(defun xcode-open(file)
+  "Open file in Xcode"
+  (interactive)
+	(shell-command (format "open -a Xcode %s" file)))
+
+(defun xcode-find-storyboards-for-directory(directory)
+  (mapcar #'string-trim
+          (split-string
+           (shell-command-to-string
+            (format "find %s -name '*storyboard' -maxdepth 1" (substring directory 0 -1))))))
+
+(defun xcode-select-workspace()
+		(completing-read
+		 "Select workspace: "
+		 (if (not (xcode-find-workspaces-for-directory default-directory))
+				 (xcode-find-workspaces-for-directory ;; try one directory up
+					(file-name-directory (directory-file-name default-directory)))) nil t))
+
 (defun xcode-find-workspaces-for-directory(directory)
   (mapcar #'string-trim
           (split-string
