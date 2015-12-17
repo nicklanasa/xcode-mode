@@ -22,7 +22,7 @@
   "Select and open storyboard."
   (interactive)
 	(xcode-open (completing-read
-							 "Select storyboard: "
+							 "Open storyboard: "
 							 (xcode-find-storyboards-for-directory default-directory) nil t)))
 
 (provide 'xcode-interface-builder)
