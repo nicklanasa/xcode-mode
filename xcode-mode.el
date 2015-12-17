@@ -18,11 +18,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-;;; Commentary:
-
-;; This is a collection of functions to further the idea of a
-;; using Emacs to perform Xcode like actions.
-
 (require 'xcode-building)
 (require 'xcode-cleaning)
 (require 'xcode-cocoapods)
