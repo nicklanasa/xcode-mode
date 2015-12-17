@@ -1,18 +1,14 @@
 (require 'xcode-helpers)
 
-(defun xcode-build-project()
+(defun xcode-build-project ()
   "Builds the Xcode project using xcodebuild."
   (interactive)
   (xcode-compile (format "xcodebuild -project %s -sdk %s -configuration %s"
-												 (completing-read
-													"Select project: "
-													(if (not (xcode-find-projects-for-directory default-directory))
-															(xcode-find-projects-for-directory ;; try one directory up
-															 (file-name-directory (directory-file-name default-directory)))) nil t)
+												 (xcode-select-project)
 												 (xcode-select-sdk)
 												 (xcode-select-build-config))))
 
-(defun xcode-build-workspace()
+(defun xcode-build-workspace ()
   "Builds the Xcode workspace using xcodebuild."
   (interactive)
   (progn

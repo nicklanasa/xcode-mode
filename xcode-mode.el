@@ -56,6 +56,12 @@
   (kbd "C-c C-x os") 'xcode-open-storyboard)
 (define-key xcode-mode-map
   (kbd "C-c C-x aw") 'xcode-archive-workspace)
+(define-key xcode-mode-map
+  (kbd "C-c C-x ap") 'xcode-archive-project)
+(define-key xcode-mode-map
+  (kbd "C-c C-x op") 'xcode-open-project)
+(define-key xcode-mode-map
+  (kbd "C-c C-x ow") 'xcode-open-workspace)
 
 
 (provide 'xcode-mode)

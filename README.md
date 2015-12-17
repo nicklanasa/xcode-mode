@@ -30,3 +30,7 @@ Here are all the keybindings:
 * `C-c C-x pi` runs `pod install`.
 * `C-c C-x os` displays a list of Storyboard's to open.
 * `C-c C-x aw` archives a workspace using the Release configuration.
+* `C-c C-x ap` archives a project using the Release configuration.
+* `C-c C-x ow` opens a workspace file in Xcode.
+* `C-c C-x op` opens a project file in Xcode.
+

@@ -1,4 +1,4 @@
-(defun xcode-open-storyboard()
+(defun xcode-open-storyboard ()
   "Select and open storyboard."
   (interactive)
 	(xcode-open (completing-read

@@ -1,6 +1,6 @@
 (require 'xcode-helpers)
 
-(defun xcode-test-workspace()
+(defun xcode-test-workspace ()
   "Test the Xcode workspace using xcodebuild."
   (interactive)
   (progn
