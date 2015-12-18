@@ -4,6 +4,8 @@
 
 ;; Author: Nickolas Lanasa <nick@nytekproductions.com>,
 ;; Keywords: conveniences
+;; Version: 0.1
+;; Package-Requires: ((emacs "24.4") (s "1.10.0") (dash "2.11.0") (multiple-cursors "1.0.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

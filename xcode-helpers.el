@@ -16,7 +16,9 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+(require 'cl-lib)
 (require 'subr-x)
+(require 'json)
 
 (defun xcode-open-workspace ()
   "Open workspace in Xcode"
@@ -97,8 +99,8 @@
                      (shell-command-to-string "xcrun simctl list devices -j"))))))
 
 (defun xcode-get-device-list (platform)
-  (let ((platforms (cdr (assoc-if #'(lambda(str) (string= platform str))
-                                  xcode-platforms-list))))
+  (let ((platforms (cdr (cl-assoc-if #'(lambda(str) (string= platform str))
+				     xcode-platforms-list))))
     (mapcar (lambda (element)
               (let ((device-list '()))
                 (let ((device (cdr element))

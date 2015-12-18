@@ -1,10 +1,7 @@
+(source gnu)
 (source melpa)
 
-(package "xcode-mode" "0.1" "A minor mode emacs to perform Xcode like actions.")
-
-(depends-on "multiple-cursors" "1.0.0")
-(depends-on "dash")
-(depends-on "s")
+(package-file "xcode-mode.el")
 
 (development
   (depends-on "ecukes")
