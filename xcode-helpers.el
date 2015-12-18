@@ -18,6 +18,7 @@
 
 (require 'cl-lib)
 (require 'subr-x)
+(require 'json)
 
 (defun xcode-open-workspace ()
   "Open workspace in Xcode"
