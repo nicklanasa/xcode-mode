@@ -31,4 +31,18 @@
                workspace
                (xcode-select-destination-id))))))
 
+(defun xcode-test-project ()
+  "Test the Xcode project using xcodebuild."
+  (interactive)
+  (progn
+    (let* ((project (xcode-select-project)))
+      (xcode-compile
+       (format "xcodebuild test -scheme %s -project %s -destination 'id=%s'"
+							 (completing-read
+                "Select scheme: "
+                (xcode-find-schemes-for-project project) nil t)
+               project
+               (xcode-select-destination-id))))))
+
+
 (provide 'xcode-testing)

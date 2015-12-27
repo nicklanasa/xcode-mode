@@ -46,6 +46,8 @@
 (define-key xcode-mode-map
   (kbd "C-c C-x tw") 'xcode-test-workspace)
 (define-key xcode-mode-map
+  (kbd "C-c C-x tp") 'xcode-test-project)
+(define-key xcode-mode-map
   (kbd "C-c C-x cw") 'xcode-clean-workspace)
 (define-key xcode-mode-map
   (kbd "C-c C-x pi") 'xcode-pod-install)

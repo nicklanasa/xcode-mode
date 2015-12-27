@@ -27,6 +27,7 @@ Here are all the keybindings:
 * `C-c C-x bp` builds the current project project.
 * `C-c C-x cw` cleans the current project workspace.
 * `C-c C-x tw` tests the current project workspace.
+* `C-c C-x tp` tests the current project project.
 * `C-c C-x pi` runs `pod install`.
 * `C-c C-x os` displays a list of Storyboard's to open.
 * `C-c C-x aw` archives a workspace using the Release configuration.
