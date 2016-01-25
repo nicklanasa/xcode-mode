@@ -123,7 +123,6 @@
   (completing-read "Select build config:" '("Debug" "Release") nil t))
 
 (defun xcode-compile (command)
-  (setq compilation-scroll-output t)
   (compile command))
 
 (provide 'xcode-helpers)

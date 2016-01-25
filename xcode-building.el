@@ -18,20 +18,24 @@
 
 (require 'xcode-helpers)
 
+(defvar xcode-xctool-path "/usr/local/bin/xctool")
+
 (defun xcode-build-project ()
-  "Builds the Xcode project using xcodebuild."
+  "Builds the Xcode project using xctool."
   (interactive)
-  (xcode-compile (format "xcodebuild -project %s -sdk %s -configuration %s"
+  (xcode-compile (format "%s -project %s -sdk %s -configuration %s"
+												 xcode-xctool-path
 												 (xcode-select-project)
 												 (xcode-select-sdk)
 												 (xcode-select-build-config))))
 
 (defun xcode-build-workspace ()
-  "Builds the Xcode workspace using xcodebuild."
+  "Builds the Xcode workspace using xctool."
   (interactive)
   (progn
     (let* ((workspace (xcode-select-workspace)))
-      (xcode-compile (format "xcodebuild build -scheme %s -workspace %s -sdk %s -configuration %s"
+      (xcode-compile (format "%s build -scheme %s -workspace %s -sdk %s -configuration %s"
+														 xcode-xctool-path
 														 (completing-read
 															"Select scheme: "
 															(xcode-find-schemes-for-workspace workspace) nil t)
