@@ -19,12 +19,13 @@
 (require 'xcode-helpers)
 
 (defun xcode-test-workspace ()
-  "Test the Xcode workspace using xcodebuild."
+  "Test the Xcode workspace using xctool."
   (interactive)
   (progn
     (let* ((workspace (xcode-select-workspace)))
       (xcode-compile
-       (format "xcodebuild test -scheme %s -workspace %s -destination 'id=%s'"
+       (format "%s test -scheme %s -workspace %s -destination 'id=%s'"
+							 xcode-xctool-path
                (completing-read
                 "Select scheme: "
                 (xcode-find-schemes-for-workspace workspace) nil t)
@@ -32,12 +33,13 @@
                (xcode-select-destination-id))))))
 
 (defun xcode-test-project ()
-  "Test the Xcode project using xcodebuild."
+  "Test the Xcode project using xctool."
   (interactive)
   (progn
     (let* ((project (xcode-select-project)))
       (xcode-compile
-       (format "xcodebuild test -scheme %s -project %s -destination 'id=%s'"
+       (format "%s test -scheme %s -project %s -destination 'id=%s'"
+							 xcode-xctool-path
 							 (completing-read
                 "Select scheme: "
                 (xcode-find-schemes-for-project project) nil t)
