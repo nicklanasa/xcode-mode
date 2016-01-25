@@ -4,7 +4,9 @@
 
 ## Installation
 
-Requires [Cask](https://github.com/cask/cask)
+Requires
+* [Cask](https://github.com/cask/cask)
+* [xctool](https://github.com/facebook/xctool)
 
 ```
 git clone https://github.com/nicklanasa/xcode-mode.git
