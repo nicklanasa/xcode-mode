@@ -45,7 +45,7 @@
 ;;; Keybindings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define-key xcode-mode-map
-  (kbd "C-c C-x bq") 'xcode-xctool-build-quickly)
+  (kbd "C-c C-x bq") 'xcode-xctool-build)
 (define-key xcode-mode-map
   (kbd "C-c C-x rt") 'xcode-xctool-run-tests)
 (define-key xcode-mode-map

@@ -27,9 +27,7 @@
 	 (format "open -a Xcode %s"
 					 (completing-read
 						"Select workspace: "
-						(if (not (xcode-find-workspaces-for-directory default-directory))
-								(xcode-find-workspaces-for-directory ;; try one directory up
-								 (file-name-directory (directory-file-name default-directory)))) nil t))))
+						(xcode-find-workspaces-for-directory default-directory) nil t))))
 
 (defun xcode-open-project ()
   "Open project in Xcode"
@@ -38,9 +36,7 @@
 	 (format "open -a Xcode %s"
 					 (completing-read
 						"Select project: "
-						(if (not (xcode-find-projects-for-directory default-directory))
-								(xcode-find-projects-for-directory ;; try one directory up
-								 (file-name-directory (directory-file-name default-directory)))) nil t))))
+						(xcode-find-projects-for-directory default-directory) nil t))))
 
 (defun xcode-open (file)
   "Open file in Xcode"
@@ -55,7 +51,7 @@
 
 (defun xcode-select-project ()
 	(completing-read
-	 "Select prpnoject: "
+	 "Select project: "
 	 (xcode-find-projects-for-directory default-directory) nil t))
 
 (defun xcode-select-workspace ()
@@ -96,7 +92,7 @@
 
 (defun xcode-get-device-list (platform)
   (let ((platforms (cdr (cl-assoc-if #'(lambda(str) (string= platform str))
-				     xcode-platforms-list))))
+																		 xcode-platforms-list))))
     (mapcar (lambda (element)
               (let ((device-list '()))
                 (let ((device (cdr element))

@@ -27,7 +27,7 @@
 												 (xcode-select-sdk)
 												 (xcode-select-build-config))))
 
-(defun xcode-xctool-build-quickly ()
+(defun xcode-xctool-build ()
 	"Builds a project using .xctool-args file in current directory."
 	(interactive)
 	(xcode-compile (format "xctool build")))
