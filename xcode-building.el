@@ -27,11 +27,10 @@
 												 (xcode-select-sdk)
 												 (xcode-select-build-config))))
 
-(defun xcode-build-workspace-quickly ()
+(defun xcode-xctool-build-quickly ()
 	"Builds a project using .xctool-args file in current directory."
 	(interactive)
-	(xcode-compile (format "xctool build -workspace %s"
-												 (xcode-select-workspace))))
+	(xcode-compile (format "xctool build")))
 
 
 (defun xcode-build-workspace ()

@@ -18,12 +18,12 @@
 
 (require 'xcode-helpers)
 
-(defun xcode-run-tests ()
+(defun xcode-xctool-run-tests ()
 	"Tests a project using .xctool-args file in current directory."
 	(interactive)
 	(xcode-compile "xctool run-tests"))
 
-(defun xcode-build-tests ()
+(defun xcode-xctool-build-tests ()
 	"Tests a project using .xctool-args file in current directory."
 	(interactive)
 	(xcode-compile "xctool build-tests"))
