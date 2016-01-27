@@ -18,8 +18,6 @@
 
 (require 'xcode-helpers)
 
-(defvar xcode-xctool-path "/usr/local/bin/xctool")
-
 (defun xcode-build-project ()
   "Builds the Xcode project using xctool."
   (interactive)
@@ -28,6 +26,13 @@
 												 (xcode-select-project)
 												 (xcode-select-sdk)
 												 (xcode-select-build-config))))
+
+(defun xcode-build-workspace-quickly ()
+	"Builds a project using .xctool-args file in current directory."
+	(interactive)
+	(xcode-compile (format "xctool build -workspace %s"
+												 (xcode-select-workspace))))
+
 
 (defun xcode-build-workspace ()
   "Builds the Xcode workspace using xctool."

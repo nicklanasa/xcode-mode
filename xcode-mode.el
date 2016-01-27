@@ -20,6 +20,13 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+(defvar xcode-xctool-path "/usr/bin/xcodebuild")
+
+(defvar xcode-mode-map
+  (make-sparse-keymap)
+  "Keymap for xcode.")
+
+(require 'xcode-helpers)
 (require 'xcode-building)
 (require 'xcode-cleaning)
 (require 'xcode-cocoapods)
@@ -27,9 +34,7 @@
 (require 'xcode-archiving)
 (require 'xcode-interface-builder)
 
-(defvar xcode-mode-map
-  (make-sparse-keymap)
-  "Keymap for xcode.")
+(setq compilation-scroll-output t)
   
 ;;;###autoload
 (define-minor-mode xcode-mode
@@ -39,6 +44,8 @@
 
 ;;; Keybindings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(define-key xcode-mode-map
+  (kbd "C-c C-x bt") 'xcode-build-tests)
 (define-key xcode-mode-map
   (kbd "C-c C-x bw") 'xcode-build-workspace)
 (define-key xcode-mode-map
