@@ -18,17 +18,44 @@
 
 (require 'xcode-helpers)
 
+(defun xcode-xctool-run-tests ()
+	"Tests a project using .xctool-args file in current directory."
+	(interactive)
+	(xcode-compile "xctool run-tests"))
+
+(defun xcode-xctool-build-tests ()
+	"Tests a project using .xctool-args file in current directory."
+	(interactive)
+	(xcode-compile "xctool build-tests"))
+
 (defun xcode-test-workspace ()
-  "Test the Xcode workspace using xcodebuild."
+  "Test the Xcode workspace using xctool."
   (interactive)
   (progn
     (let* ((workspace (xcode-select-workspace)))
       (xcode-compile
-       (format "xcodebuild test -scheme %s -workspace %s -destination 'id=%s'"
+       (format "%s -scheme %s -workspace %s -destination 'id=%s' -sdk %s test"
+							 xcode-xctool-path
                (completing-read
                 "Select scheme: "
                 (xcode-find-schemes-for-workspace workspace) nil t)
                workspace
+               (xcode-select-destination-id)
+							 (xcode-select-sdk))))))
+
+(defun xcode-test-project ()
+  "Test the Xcode project using xctool."
+  (interactive)
+  (progn
+    (let* ((project (xcode-select-project)))
+      (xcode-compile
+       (format "%s test -scheme %s -project %s -destination 'id=%s'"
+							 xcode-xctool-path
+							 (completing-read
+                "Select scheme: "
+                (xcode-find-schemes-for-project project) nil t)
+               project
                (xcode-select-destination-id))))))
+
 
 (provide 'xcode-testing)

@@ -55,29 +55,25 @@
 
 (defun xcode-select-project ()
 	(completing-read
-	 "Select project: "
-	 (if (not (xcode-find-projects-for-directory default-directory))
-			 (xcode-find-projects-for-directory ;; try one directory up
-				(file-name-directory (directory-file-name default-directory)))) nil t))
+	 "Select prpnoject: "
+	 (xcode-find-projects-for-directory default-directory) nil t))
 
 (defun xcode-select-workspace ()
-		(completing-read
-		 "Select workspace: "
-		 (if (not (xcode-find-workspaces-for-directory default-directory))
-				 (xcode-find-workspaces-for-directory ;; try one directory up
-					(file-name-directory (directory-file-name default-directory)))) nil t))
+	(completing-read
+	 "Select workspace: "
+	 (xcode-find-workspaces-for-directory default-directory) nil t))
 
 (defun xcode-find-workspaces-for-directory (directory)
   (mapcar #'string-trim
           (split-string
            (shell-command-to-string
-            (format "find %s -name '*workspace' -maxdepth 1" (substring directory 0 -1))))))
+            (format "find %s -name '*workspace'" directory)))))
 
 (defun xcode-find-projects-for-directory (directory)
   (mapcar #'string-trim
           (split-string
            (shell-command-to-string
-            (format "find %s -name '*xcodeproj' -maxdepth 1" (substring directory 0 -1))))))
+            (format "find %s -name '*xcodeproj'")))))
 
 (defun xcode-find-schemes-for-workspace (workspace)
   (mapcar #'string-trim
@@ -117,13 +113,15 @@
                                            (xcode-get-platform-list) nil t)) nil t))))
 
 (defun xcode-select-sdk ()
-  (completing-read "Select SDK:" '("iphoneos" "macosx" "appletvos" "watchos") nil t))
+  (completing-read "Select SDK:" '("iphoneos" "macosx" "appletvos" "watchos" "iphonesimulator") nil t))
 
 (defun xcode-select-build-config ()
   (completing-read "Select build config:" '("Debug" "Release") nil t))
 
 (defun xcode-compile (command)
-  (setq compilation-scroll-output t)
   (compile command))
+
+(defun xcode-use-xctool ()
+	(setq xcode-xctool-path "/usr/local/bin/xctool"))
 
 (provide 'xcode-helpers)
