@@ -2,6 +2,8 @@
 
 **xcode-mode** is a minor mode for Emacs to perform Xcode like actions in your iOS projects.
 
+**Notes**: You must be in the directory the **.xctool-args** file is and the **project** or **workspace** file is located for all commands to work.
+
 ## Installation
 
 Requires
@@ -25,17 +27,20 @@ All keybindings start with `C-c C-x`. All functions in xcode-mode have a two-let
 
 Here are all the keybindings:
 
-* `C-c C-x bw` builds the current project workspace.
-* `C-c C-x bp` builds the current project project.
-* `C-c C-x cw` cleans the current project workspace.
-* `C-c C-x tw` tests the current project workspace.
-* `C-c C-x tp` tests the current project project.
+* `C-c C-x bq` builds project or workspace based on **.xctool-args** in current directory using xctool.
+* `C-c C-x rt` run tests using xctool.
+* `C-c C-x bt` builds tests using xctool.
+* `C-c C-x bw` builds the current project workspace in the current directory.
+* `C-c C-x bp` builds the current project project in the current directory.
+* `C-c C-x cw` cleans the current project workspace in the current directory.
+* `C-c C-x tw` tests the current project workspace in the current directory.
+* `C-c C-x tp` tests the current project project in the current directory.
 * `C-c C-x pi` runs `pod install`.
-* `C-c C-x os` displays a list of Storyboard's to open.
-* `C-c C-x aw` archives a workspace using the Release configuration.
-* `C-c C-x ap` archives a project using the Release configuration.
-* `C-c C-x ow` opens a workspace file in Xcode.
-* `C-c C-x op` opens a project file in Xcode.
+* `C-c C-x os` displays a list of Storyboard's to open in the current directory.
+* `C-c C-x aw` archives a workspace using the Release configuration in the current directory.
+* `C-c C-x ap` archives a project using the Release configuration in the current directory.
+* `C-c C-x ow` opens a workspace file in Xcode in the current directory.
+* `C-c C-x op` opens a project file in Xcode in the current directory.
 
 ## Contribute
 
