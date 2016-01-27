@@ -4,6 +4,8 @@
 
 **Notes**: You must be in the directory the **.xctool-args** file is and the **project** or **workspace** file is located for all commands to work.
 
+![xcode-mode](xcode-mode.gif)
+
 ## Installation
 
 Requires
