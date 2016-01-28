@@ -23,7 +23,8 @@
   (interactive)
   (progn
     (let* ((workspace (xcode-select-workspace)))
-      (xcode-compile (format "xcodebuild archive -workspace %s -scheme %s -configuration Release"
+      (xcode-compile (format "%s archive -workspace %s -scheme %s -configuration Release"
+														 xcode-xctool-path
 														 workspace 
 														 (completing-read
 															"Select scheme: "
@@ -34,7 +35,8 @@
   (interactive)
   (progn
     (let* ((project (xcode-select-project)))
-      (xcode-compile (format "xcodebuild archive -project %s -scheme %s -configuration Release"
+      (xcode-compile (format "%s archive -project %s -scheme %s -configuration Release"
+														 xcode-xctool-path
 														 project 
 														 (completing-read
 															"Select scheme: "

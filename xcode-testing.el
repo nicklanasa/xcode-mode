@@ -31,17 +31,8 @@
 (defun xcode-test-workspace ()
   "Test the Xcode workspace using xctool."
   (interactive)
-  (progn
-    (let* ((workspace (xcode-select-workspace)))
-      (xcode-compile
-       (format "%s -scheme %s -workspace %s -destination 'id=%s' -sdk %s test"
-							 xcode-xctool-path
-               (completing-read
-                "Select scheme: "
-                (xcode-find-schemes-for-workspace workspace) nil t)
-               workspace
-               (xcode-select-destination-id)
-							 (xcode-select-sdk))))))
+	(xcode-compile
+       (format "%s test" xcode-xctool-path)))
 
 (defun xcode-test-project ()
   "Test the Xcode project using xctool."
