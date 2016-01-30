@@ -44,35 +44,37 @@
 
 ;;; Keybindings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Building
 (define-key xcode-mode-map
-  (kbd "C-c C-x bq") 'xcode-xctool-build)
+  (kbd"C-c C-x bb") 'xcode-xctool-build)
+
+;; Testing
 (define-key xcode-mode-map
   (kbd "C-c C-x rt") 'xcode-xctool-run-tests)
 (define-key xcode-mode-map
   (kbd "C-c C-x bt") 'xcode-xctool-build-tests)
 (define-key xcode-mode-map
-  (kbd "C-c C-x bw") 'xcode-build-workspace)
+  (kbd "C-c C-x tt") 'xcode-xctool-test)
+
+;; Cleaning
 (define-key xcode-mode-map
-  (kbd "C-c C-x bp") 'xcode-build-project)
-(define-key xcode-mode-map
-  (kbd "C-c C-x tw") 'xcode-test-workspace)
-(define-key xcode-mode-map
-  (kbd "C-c C-x tp") 'xcode-test-project)
-(define-key xcode-mode-map
-  (kbd "C-c C-x cw") 'xcode-clean-workspace)
+  (kbd "C-c C-x c") 'xcode-xctool-clean)
+
+;; Cocoapods
 (define-key xcode-mode-map
   (kbd "C-c C-x pi") 'xcode-pod-install)
+
+;; Opening in Xcode
 (define-key xcode-mode-map
   (kbd "C-c C-x os") 'xcode-open-storyboard)
-(define-key xcode-mode-map
-  (kbd "C-c C-x aw") 'xcode-archive-workspace)
-(define-key xcode-mode-map
-  (kbd "C-c C-x ap") 'xcode-archive-project)
 (define-key xcode-mode-map
   (kbd "C-c C-x op") 'xcode-open-project)
 (define-key xcode-mode-map
   (kbd "C-c C-x ow") 'xcode-open-workspace)
 
+;; Archiving
+(define-key xcode-mode-map
+  (kbd "C-c C-x a") 'xcode-xctool-archive)
 
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here
