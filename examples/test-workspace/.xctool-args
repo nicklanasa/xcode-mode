@@ -1,0 +1,6 @@
+[
+  "-workspace", "./test-workspace.xcworkspace",
+  "-scheme", "test-workspace",
+  "-configuration", "Debug",
+  "-sdk", "iphonesimulator"
+]

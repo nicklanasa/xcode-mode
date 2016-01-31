@@ -28,25 +28,9 @@
 	(interactive)
 	(xcode-compile "xctool build-tests"))
 
-(defun xcode-test-workspace ()
-  "Test the Xcode workspace using xctool."
-  (interactive)
-	(xcode-compile
-       (format "%s test" xcode-xctool-path)))
-
-(defun xcode-test-project ()
+(defun xcode-xctool-test ()
   "Test the Xcode project using xctool."
   (interactive)
-  (progn
-    (let* ((project (xcode-select-project)))
-      (xcode-compile
-       (format "%s test -scheme %s -project %s -destination 'id=%s'"
-							 xcode-xctool-path
-							 (completing-read
-                "Select scheme: "
-                (xcode-find-schemes-for-project project) nil t)
-               project
-               (xcode-select-destination-id))))))
-
+	(xcode-compile "xctool test"))
 
 (provide 'xcode-testing)

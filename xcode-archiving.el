@@ -18,30 +18,10 @@
 
 (require 'xcode-helpers)
 
-(defun xcode-archive-workspace ()
-  "Archive the Xcode workspace."
-  (interactive)
-  (progn
-    (let* ((workspace (xcode-select-workspace)))
-      (xcode-compile (format "%s archive -workspace %s -scheme %s -configuration Release"
-														 xcode-xctool-path
-														 workspace 
-														 (completing-read
-															"Select scheme: "
-															(xcode-find-schemes-for-workspace workspace) nil t))))))
-
-(defun xcode-archive-project ()
+(defun xcode-xctool-archive ()
   "Archive the Xcode project."
   (interactive)
-  (progn
-    (let* ((project (xcode-select-project)))
-      (xcode-compile (format "%s archive -project %s -scheme %s -configuration Release"
-														 xcode-xctool-path
-														 project 
-														 (completing-read
-															"Select scheme: "
-															(xcode-find-schemes-for-project project) nil t))))))
-
+	(xcode-compile "xctool archive -configuration Release"))
 
 (provide 'xcode-archiving)
 

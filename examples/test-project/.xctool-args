@@ -1,0 +1,6 @@
+[
+  "-project", "./test-project.xcodeproj",
+  "-scheme", "test-project",
+  "-configuration", "Debug",
+  "-sdk", "iphonesimulator"
+]

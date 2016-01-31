@@ -18,20 +18,9 @@
 
 (require 'xcode-helpers)
 
-(defun xcode-clean-workspace()
-  "Cleans the Xcode workspace using xcodebuild."
+(defun xcode-xctool-clean()
+  "Cleans the project using xctool."
   (interactive)
-  (progn
-    (let* ((workspace 
-            (completing-read
-             "Select workspace: "
-						 (xcode-find-workspaces-for-directory default-directory) nil t)))
-      (xcode-compile
-       (format "%s clean -scheme %s -workspace %s"
-							 xcode-xctool-path
-               (completing-read
-                "Select scheme: "
-                (xcode-find-schemes-for-workspace workspace) nil t)
-               workspace)))))
+	(xcode-compile "xctool clean"))
 
 (provide 'xcode-cleaning)

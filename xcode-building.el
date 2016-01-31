@@ -18,33 +18,14 @@
 
 (require 'xcode-helpers)
 
-(defun xcode-build-project ()
-  "Builds the Xcode project using xctool."
+(defun xcode-xctool-run ()
+	"Runs the Xcode project using xctool."
   (interactive)
-  (xcode-compile (format "%s -project %s -sdk %s -configuration %s"
-												 xcode-xctool-path
-												 (xcode-select-project)
-												 (xcode-select-sdk)
-												 (xcode-select-build-config))))
+  (xcode-compile "xctool build -derivedDataPath build"))
 
 (defun xcode-xctool-build ()
-	"Builds a project using .xctool-args file in current directory."
-	(interactive)
-	(xcode-compile (format "xctool build")))
-
-
-(defun xcode-build-workspace ()
-  "Builds the Xcode workspace using xctool."
+  "Builds the Xcode project using xctool."
   (interactive)
-  (progn
-    (let* ((workspace (xcode-select-workspace)))
-      (xcode-compile (format "%s build -scheme %s -workspace %s -sdk %s -configuration %s"
-														 xcode-xctool-path
-														 (completing-read
-															"Select scheme: "
-															(xcode-find-schemes-for-workspace workspace) nil t)
-														 workspace
-														 (xcode-select-sdk)
-														 (xcode-select-build-config))))))
+  (xcode-compile "xctool build"))
 
 (provide 'xcode-building)
