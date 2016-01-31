@@ -13,7 +13,7 @@
 
 (Before
  (switch-to-buffer
-  (get-buffer-create "*xcode-mode*"))
+  (get-buffer-create "*testing-buffer*"))
  (multiple-cursors-mode 0)
  (erase-buffer)
  (transient-mark-mode 1)

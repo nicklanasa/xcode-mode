@@ -20,8 +20,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(defvar xcode-xctool-path "/usr/bin/xcodebuild")
-
 (defvar xcode-mode-map
   (make-sparse-keymap)
   "Keymap for xcode.")
@@ -58,7 +56,7 @@
 
 ;; Cleaning
 (define-key xcode-mode-map
-  (kbd "C-c C-x c") 'xcode-xctool-clean)
+  (kbd "C-c C-x cc") 'xcode-xctool-clean)
 
 ;; Cocoapods
 (define-key xcode-mode-map
@@ -74,7 +72,7 @@
 
 ;; Archiving
 (define-key xcode-mode-map
-  (kbd "C-c C-x a") 'xcode-xctool-archive)
+  (kbd "C-c C-x aa") 'xcode-xctool-archive)
 
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here
