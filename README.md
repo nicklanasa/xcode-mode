@@ -2,7 +2,7 @@
 
 **xcode-mode** is a minor mode for Emacs to perform Xcode like actions in your iOS projects.
 
-**Notes**: `xcode-mode` uses `xctool`, `xctool` will use a **.xctool-args** file in the root directory.
+**Note**: `xcode-mode` uses `xctool`, `xctool` will use a **.xctool-args** file in the root project directory to execute commands.
 
 ![xcode-mode](xcode-mode.gif)
 
