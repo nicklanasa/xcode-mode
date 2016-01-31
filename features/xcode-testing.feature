@@ -16,3 +16,13 @@ Feature: Testing
     And I wait for compilation to finish
     Then I should see "2 passed"
 
+  Scenario: Building tests for a project
+    When I open a file "examples/test-project/.xctool-args"
+    And I turn on xcode-mode
+    And I press "C-c C-x bt"
+    And I switch to buffer "*compilation*"
+    And I wait for compilation to finish
+    Then I should see "BUILD-TESTS SUCCEEDED"
+    And I should not see "BUILD-TESTS FAILED"
+
+
