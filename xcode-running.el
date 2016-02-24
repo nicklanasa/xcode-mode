@@ -22,9 +22,10 @@
 	"Runs the Xcode project in sim using xctool."
   (interactive)
 	(compile
-	 (format "ios-sim launch %s"
+	 (format "ios-sim launch %s --devicetypeid '%s'"
 					 (completing-read
 						"Select app: "
-						(xcode-find-apps) nil t))))
+						(xcode-find-apps) nil t)
+					 xcode-ios-sim-devicetype)))
 
 (provide 'xcode-running)
