@@ -2,7 +2,7 @@
 
 **xcode-mode** is a minor mode for Emacs to perform Xcode like actions in your iOS projects.
 
-**Note**: `xcode-mode` uses `xctool`, `xctool` will use a **.xctool-args** file in the root project directory to execute commands.
+**Note**: `xcode-mode` uses `ios-sim` and `xctool`, `xctool` will use a **.xctool-args** file in the root project directory to execute commands.
 
 ![xcode-mode](xcode-mode.gif)
 
@@ -29,6 +29,7 @@ All keybindings start with `C-c C-x`. All functions in xcode-mode have a two-let
 
 Here are all the keybindings:
 
+* `C-c C-x rr` runs a project or workspace based on **.xctool-args** on a device based on the `xcode-ios-sim-devicetype` xcode-mode var. Set this to tell xcode-mode what device you want to run the app on. Defaults to `com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.1`
 * `C-c C-x bb` builds project or workspace based on **.xctool-args**.
 * `C-c C-x rt` executes the `run-tests` command via `xctool`.
 * `C-c C-x bt` executes the `build-tests` command via `xctool`.

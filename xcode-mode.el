@@ -24,12 +24,31 @@
   (make-sparse-keymap)
   "Keymap for xcode.")
 
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-4s, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-5, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-5s, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-6s, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPad-2, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPad-Retina, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPad-Air, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPad-Air-2, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.iPad-Pro, 9.2
+;; com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p, 9.1
+;; com.apple.CoreSimulator.SimDeviceType.Apple-Watch-38mm, 2.1
+;; com.apple.CoreSimulator.SimDeviceType.Apple-Watch-42mm, 2.1
+
+(defvar xcode-ios-sim-devicetype "com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.1")
+
 (require 'xcode-helpers)
 (require 'xcode-building)
 (require 'xcode-cleaning)
 (require 'xcode-cocoapods)
 (require 'xcode-testing)
 (require 'xcode-archiving)
+(require 'xcode-running)
 (require 'xcode-interface-builder)
 
 (setq compilation-scroll-output t)
@@ -41,6 +60,10 @@
   :keymap xcode-mode-map)
 
 ;;; Keybindings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Running
+(define-key xcode-mode-map
+  (kbd"C-c C-x rr") 'xcode-xctool-run)
 
 ;; Building
 (define-key xcode-mode-map

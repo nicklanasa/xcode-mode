@@ -1,4 +1,4 @@
-;; Copyright (C) 2015 Nickolas S Lanasa III
+;; Copyright (C) 2016 Nickolas S Lanasa III
 
 ;; Author: Nickolas S Lanasa III <nick@nytekproductions.com>
 ;; Keywords: Xcode iOS
@@ -18,9 +18,14 @@
 
 (require 'xcode-helpers)
 
-(defun xcode-xctool-build ()
-  "Builds the Xcode project using xctool."
+(defun xcode-xctool-run ()
+	"Runs the Xcode project in sim using xctool."
   (interactive)
-  (xcode-compile "xctool build"))
+	(compile
+	 (format "ios-sim launch %s --devicetypeid '%s'"
+					 (completing-read
+						"Select app: "
+						(xcode-find-apps) nil t)
+					 xcode-ios-sim-devicetype)))
 
-(provide 'xcode-building)
+(provide 'xcode-running)
