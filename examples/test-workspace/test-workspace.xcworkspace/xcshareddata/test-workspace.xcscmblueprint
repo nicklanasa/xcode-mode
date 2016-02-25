@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B38C6579AAEF44E5D3B5FC6C520CEE7C09AF1864",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B38C6579AAEF44E5D3B5FC6C520CEE7C09AF1864" : 0,
+    "95CB6BC2C257A23828AA3F9262C6406DC2B74D19" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D928631E-DBF3-4E4F-815D-FF5AB046FA71",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B38C6579AAEF44E5D3B5FC6C520CEE7C09AF1864" : "xcode-mode\/",
+    "95CB6BC2C257A23828AA3F9262C6406DC2B74D19" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "test-workspace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "examples\/test-workspace\/test-workspace.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nicklanasa\/emacs.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95CB6BC2C257A23828AA3F9262C6406DC2B74D19"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nicklanasa\/xcode-mode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B38C6579AAEF44E5D3B5FC6C520CEE7C09AF1864"
+    }
+  ]
+}
