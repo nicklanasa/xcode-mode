@@ -18,11 +18,6 @@
 
 (require 'xcode-helpers)
 
-(defun xcode-xctool-run ()
-	"Runs the Xcode project using xctool."
-  (interactive)
-  (xcode-compile "xctool build -derivedDataPath build"))
-
 (defun xcode-xctool-build ()
   "Builds the Xcode project using xctool."
   (interactive)
