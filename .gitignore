@@ -1,3 +1,6 @@
 .cask
 .ecukes-failing-scenarios
 *.DS_Store
+
+examples/test-workspace/test-workspace.xcodeproj/xcuserdata/*
+examples/test-workspace/test-workspace.xcworkspace/xcuserdata/*
