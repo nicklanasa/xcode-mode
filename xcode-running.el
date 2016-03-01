@@ -28,4 +28,16 @@
 						(xcode-find-apps) nil t)
 					 xcode-ios-sim-devicetype)))
 
+(defun xcode-xctool-build-and-run ()
+	"Build and run the in sim using xctool"
+	(interactive)
+	(message "Building...")
+	(shell-command-to-string "xctool build")
+	(compile
+	 (format "ios-sim launch %s --devicetypeid '%s'"
+					 (completing-read
+						"Select app: "
+						(xcode-find-apps) nil t)
+					 xcode-ios-sim-devicetype)))
+
 (provide 'xcode-running)
