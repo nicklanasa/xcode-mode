@@ -40,6 +40,7 @@ Here are all the keybindings:
 * `C-c C-x os` displays a list of Storyboard's to open in the current directory.
 * `C-c C-x ow` opens a workspace file in Xcode in the current directory.
 * `C-c C-x op` opens a project file in Xcode in the current directory.
+* `C-c C-x dd` displays a list of derived data folders to delete.
 
 ## Contribute
 

@@ -100,5 +100,9 @@
 (define-key xcode-mode-map
   (kbd "C-c C-x aa") 'xcode-xctool-archive)
 
+;; Helpers
+(define-key xcode-mode-map
+  (kbd "C-c C-x dd") 'xcode-delete-derived-data)
+
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here
