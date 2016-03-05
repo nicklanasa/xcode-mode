@@ -43,7 +43,20 @@
   (interactive)
 	(shell-command (format "open -a Xcode %s" file)))
 
-(defun xcode-find-apps ()
+(defun xcode-delete-derived-data ()
+	(interactive)
+	(xcode-compile
+	 (format "rm -r ~/Library/Developer/Xcode/DerivedData/%s"
+					 (completing-read
+						"Select folder: "
+						(xcode-derived-data-list) nil t))))
+
+(defun xcode-derived-data-list ()
+	(mapcar #'string-trim
+					(split-string
+					 (shell-command-to-string "ls ~/Library/Developer/Xcode/DerivedData/"))))
+
+(defun xcode-find-binaries ()
 	(mapcar #'string-trim
 					(split-string
 					 (shell-command-to-string "find ~/Library/Developer/Xcode/DerivedData/ -name *.app"))))
