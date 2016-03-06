@@ -1,6 +1,11 @@
 [
   "-project", "./test-project.xcodeproj",
   "-scheme", "test-project",
+  "-destination", "name=iPhone 6",
   "-configuration", "Debug",
   "-sdk", "iphonesimulator"
 ]
+
+
+
+

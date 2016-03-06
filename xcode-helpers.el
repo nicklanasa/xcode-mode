@@ -65,7 +65,7 @@
   (mapcar #'string-trim
           (split-string
            (shell-command-to-string
-            (format "find %s -name '*storyboard' -maxdepth 1" (substring directory 0 -1))))))
+            (format "find %s -name '*storyboard'" (substring directory 0 -1))))))
 
 (defun xcode-select-project ()
 	(completing-read

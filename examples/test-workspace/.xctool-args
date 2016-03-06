@@ -1,7 +1,7 @@
 [
   "-workspace", "./test-workspace.xcworkspace",
   "-scheme", "test-workspace",
-  "-destination", "id=443301EF-528B-4870-B40F-B5039DA1B99C,platform=iOS Simulator",
+  "-destination", "name=iPhone 6",
   "-configuration", "Debug",
   "-sdk", "iphonesimulator"
 ]
