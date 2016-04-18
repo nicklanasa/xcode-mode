@@ -33,4 +33,9 @@
   (interactive)
 	(xcode-compile "xctool test"))
 
+(defun xcode-xctool-test-only (scheme)
+  "Test the Xcode project using xctool with a specific scheme."
+	(interactive "sEnter scheme: ")
+	(xcode-compile (format "xctool test -only %s" scheme)))
+
 (provide 'xcode-testing)

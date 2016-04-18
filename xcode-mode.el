@@ -40,7 +40,7 @@
 ;; com.apple.CoreSimulator.SimDeviceType.Apple-Watch-38mm, 2.1
 ;; com.apple.CoreSimulator.SimDeviceType.Apple-Watch-42mm, 2.1
 
-(defvar xcode-ios-sim-devicetype "com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.2")
+(defvar xcode-ios-sim-devicetype "com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.3")
 
 (require 'xcode-helpers)
 (require 'xcode-building)
@@ -79,6 +79,8 @@
   (kbd "C-c C-x bt") 'xcode-xctool-build-tests)
 (define-key xcode-mode-map
   (kbd "C-c C-x tt") 'xcode-xctool-test)
+(define-key xcode-mode-map
+  (kbd "C-c C-x to") 'xcode-xctool-test-only)
 
 ;; Cleaning
 (define-key xcode-mode-map
