@@ -38,4 +38,15 @@
 	(interactive "sEnter scheme: ")
 	(xcode-compile (format "xctool test -only %s" scheme)))
 
+(defun xcode-xctool-run-tests-only (scheme)
+  "Runs tests the Xcode project using xctool with a specific scheme."
+	(interactive "sEnter scheme: ")
+	(xcode-compile (format "xctool run-tests -only %s" scheme)))
+
+(defun xcode-xctool-build-tests-only (scheme)
+  "Builds tests the Xcode project using xctool with a specific scheme."
+	(interactive "sEnter scheme: ")
+	(xcode-compile (format "xctool build-tests -only %s" scheme)))
+
+
 (provide 'xcode-testing)

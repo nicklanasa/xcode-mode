@@ -80,7 +80,9 @@
 (define-key xcode-mode-map
   (kbd "C-c C-x tt") 'xcode-xctool-test)
 (define-key xcode-mode-map
-  (kbd "C-c C-x to") 'xcode-xctool-test-only)
+  (kbd "C-c C-x to") 'xcode-xctool-build-tests-only)
+(define-key xcode-mode-map
+  (kbd "C-c C-x ro") 'xcode-xctool-run-tests-only)
 
 ;; Cleaning
 (define-key xcode-mode-map
