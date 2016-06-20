@@ -21,7 +21,7 @@
 (defun xcode-open-storyboard ()
   "Select and open storyboard."
   (interactive)
-	(xcode-open (completing-read
+	(xcode-open (xcode-completing-read
 							 "Open storyboard: "
 							 (xcode-find-storyboards-for-directory default-directory) nil t)))
 

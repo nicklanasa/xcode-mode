@@ -42,6 +42,12 @@ Here are all the keybindings:
 * `C-c C-x op` opens a project file in Xcode in the current directory.
 * `C-c C-x dd` displays a list of derived data folders to delete.
 
+## Misc
+
+Example custom completing-read function to change user interaction.
+
+(setq xcode-completing-read-function 'ivy-completing-read)
+
 ## Contribute
 
 Yes, please do. Tests are setup but none are written, would love some help here as well.
