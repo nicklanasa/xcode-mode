@@ -59,7 +59,7 @@
 (defun xcode-find-binaries ()
 	(mapcar #'string-trim
 					(split-string
-					 (shell-command-to-string "find ~/Library/Developer/Xcode/DerivedData/ -name *.app"))))
+					 (shell-command-to-string "find ~/Library/Developer/Xcode/DerivedData/ -name '*.app'"))))
 
 (defun xcode-find-storyboards-for-directory (directory)
   (mapcar #'string-trim
