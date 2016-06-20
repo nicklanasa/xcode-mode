@@ -20,12 +20,21 @@
 (require 'subr-x)
 (require 'json)
 
+(defcustom xcode-completing-read-function 'completing-read
+  "Function to be called when requesting input from the user."
+  :group 'xcode-mode
+  :type '(radio (function-item completing-read)
+                (function :tag "Other")))
+
+(defmacro xcode-completing-read (&rest body)
+  `(funcall xcode-completing-read-function ,@body))
+
 (defun xcode-open-workspace ()
   "Open workspace in Xcode"
   (interactive)
 	(shell-command
 	 (format "open -a Xcode %s"
-					 (completing-read
+					 (xcode-completing-read
 						"Select workspace: "
 						(xcode-find-workspaces-for-directory default-directory) nil t))))
 
@@ -34,7 +43,7 @@
   (interactive)
 	(shell-command
 	 (format "open -a Xcode %s"
-					 (completing-read
+					 (xcode-completing-read
 						"Select project: "
 						(xcode-find-projects-for-directory default-directory) nil t))))
 
@@ -47,7 +56,7 @@
 	(interactive)
 	(xcode-compile
 	 (format "rm -r ~/Library/Developer/Xcode/DerivedData/%s"
-					 (completing-read
+					 (xcode-completing-read
 						"Select folder: "
 						(xcode-derived-data-list) nil t))))
 
@@ -68,12 +77,12 @@
             (format "find %s -name '*storyboard'" (substring directory 0 -1))))))
 
 (defun xcode-select-project ()
-	(completing-read
+	(xcode-completing-read
 	 "Select project: "
 	 (xcode-find-projects-for-directory default-directory) nil t))
 
 (defun xcode-select-workspace ()
-	(completing-read
+	(xcode-completing-read
 	 "Select workspace: "
 	 (xcode-find-workspaces-for-directory default-directory) nil t))
 
@@ -121,16 +130,16 @@
 (defun xcode-select-destination-id ()
   (nth 3
        (split-string
-        (completing-read "Select device:"
+        (xcode-completing-read "Select device:"
                          (xcode-get-device-list
-                          (completing-read "Select platform:"
+                          (xcode-completing-read "Select platform:"
                                            (xcode-get-platform-list) nil t)) nil t))))
 
 (defun xcode-select-sdk ()
-  (completing-read "Select SDK:" '("iphoneos" "macosx" "appletvos" "watchos" "iphonesimulator") nil t))
+  (xcode-completing-read "Select SDK:" '("iphoneos" "macosx" "appletvos" "watchos" "iphonesimulator") nil t))
 
 (defun xcode-select-build-config ()
-  (completing-read "Select build config:" '("Debug" "Release") nil t))
+  (xcode-completing-read "Select build config:" '("Debug" "Release") nil t))
 
 (defun xcode-compile (command)
   (compile command))

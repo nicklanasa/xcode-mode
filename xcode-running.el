@@ -23,7 +23,7 @@
   (interactive)
 	(compile
 	 (format "ios-sim launch %s --devicetypeid '%s'"
-					 (completing-read
+					 (xcode-completing-read
 						"Select app: "
 						(xcode-find-binaries) nil t)
 					 xcode-ios-sim-devicetype)))
@@ -35,7 +35,7 @@
 	(shell-command-to-string "xctool build")
 	(compile
 	 (format "ios-sim launch %s --devicetypeid '%s'"
-					 (completing-read
+					 (xcode-completing-read
 						"Select app: "
 						(xcode-find-binaries) nil t)
 					 xcode-ios-sim-devicetype)))
