@@ -159,7 +159,7 @@
 If projectile available, use projectile.
 Else, use locate-dominating-file.
 Finally fall back to the current directory."
-  (if (not (fboundp 'projectile-project-root))
+  (if (fboundp 'projectile-project-root)
       (projectile-project-root)
     (or (locate-dominating-file default-directory ".xctool-args")
         default-directory)))
