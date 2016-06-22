@@ -19,25 +19,30 @@
 (require 'xcode-helpers)
 
 (defun xcode-xctool-run ()
-	"Runs the Xcode project in sim using xctool."
+  "Runs the Xcode project in sim using xctool."
   (interactive)
-	(compile
-	 (format "ios-sim launch %s --devicetypeid '%s'"
-					 (xcode-completing-read
-						"Select app: "
-						(xcode-find-binaries) nil t)
-					 xcode-ios-sim-devicetype)))
+  (xcode-in-root (compile
+                  (format "ios-sim launch %s --devicetypeid '%s'"
+                          (xcode-completing-read
+                           "Select app: "
+                           (xcode-find-binaries) nil t)
+                          xcode-ios-sim-devicetype))))
 
 (defun xcode-xctool-build-and-run ()
-	"Build and run the in sim using xctool"
-	(interactive)
-	(message "Building...")
-	(shell-command-to-string "xctool build")
-	(compile
-	 (format "ios-sim launch %s --devicetypeid '%s'"
-					 (xcode-completing-read
-						"Select app: "
-						(xcode-find-binaries) nil t)
-					 xcode-ios-sim-devicetype)))
+  "Build and run the in sim using xctool"
+  (interactive)
+  (message "Building...")
+  (add-hook 'compilation-finish-functions 'xcode-on-build-finish)
+  (xcode-compile "xctool build"))
+
+(defun xcode-on-build-finish (buffer desc)
+  "Callback function after compilation finishes."
+  (xcode-in-root (compile
+                  (format "ios-sim launch %s --devicetypeid '%s'"
+                          (xcode-completing-read
+                           "Select app: "
+                           (xcode-find-binaries) nil t)
+                          xcode-ios-sim-devicetype)))
+  (remove-hook 'compilation-finish-functions 'xcode-on-build-finish))
 
 (provide 'xcode-running)
