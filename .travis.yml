@@ -1,0 +1,12 @@
+os: osx
+osx_image: xcode7.3
+language: emacs-lisp
+
+before_install:
+  - brew install emacs
+  - curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+  - export PATH="/Users/travis/.cask/bin:$PATH"
+  - cask install
+
+script:
+  ./run-travis-ci.sh

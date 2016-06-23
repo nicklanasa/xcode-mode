@@ -20,6 +20,20 @@
                ReferencedContainer = "container:test-workspace.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "01E233151C5C71C700670E32"
+               BuildableName = "test-workspaceUITests.xctest"
+               BlueprintName = "test-workspaceUITests"
+               ReferencedContainer = "container:test-workspace.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -35,16 +49,6 @@
                BlueprintIdentifier = "01E2330A1C5C71C700670E32"
                BuildableName = "test-workspaceTests.xctest"
                BlueprintName = "test-workspaceTests"
-               ReferencedContainer = "container:test-workspace.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "01E233151C5C71C700670E32"
-               BuildableName = "test-workspaceUITests.xctest"
-               BlueprintName = "test-workspaceUITests"
                ReferencedContainer = "container:test-workspace.xcodeproj">
             </BuildableReference>
          </TestableReference>
