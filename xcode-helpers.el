@@ -142,9 +142,26 @@
   (xcode-completing-read "Select build config:" '("Debug" "Release") nil t))
 
 (defun xcode-compile (command)
-  (compile command))
+  (xcode-in-root
+   (compile command)))
 
 (defun xcode-use-xctool ()
 	(setq xcode-xctool-path "/usr/local/bin/xctool"))
+
+(defmacro xcode-in-root (body)
+  "Execute BODY form with `xcode-project-directory' as
+``default-directory''."
+  `(let ((default-directory (xcode-project-directory)))
+     ,body))
+
+(defun xcode-project-directory ()
+  "Get project directory.
+If projectile available, use projectile.
+Else, use locate-dominating-file.
+Finally fall back to the current directory."
+  (if (fboundp 'projectile-project-root)
+      (projectile-project-root)
+    (or (locate-dominating-file default-directory ".xctool-args")
+        default-directory)))
 
 (provide 'xcode-helpers)
