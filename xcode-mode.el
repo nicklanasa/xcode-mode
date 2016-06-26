@@ -56,50 +56,50 @@
 
 ;; Build then run
 (define-key xcode-mode-map
-  (kbd"C-c x br") 'xcode-xctool-build-and-run)
+  (kbd"C-M-x br") 'xcode-xctool-build-and-run)
 
 (define-key xcode-mode-map
-  (kbd"C-c x rr") 'xcode-xctool-run)
+  (kbd"C-M-x rr") 'xcode-xctool-run)
 
 ;; Building
 (define-key xcode-mode-map
-  (kbd"C-c x bb") 'xcode-xctool-build)
+  (kbd"C-M-x bb") 'xcode-xctool-build)
 
 ;; Testing
 (define-key xcode-mode-map
-  (kbd "C-c x rt") 'xcode-xctool-run-tests)
+  (kbd "C-M-x rt") 'xcode-xctool-run-tests)
 (define-key xcode-mode-map
-  (kbd "C-c x bt") 'xcode-xctool-build-tests)
+  (kbd "C-M-x bt") 'xcode-xctool-build-tests)
 (define-key xcode-mode-map
-  (kbd "C-c x tt") 'xcode-xctool-test)
+  (kbd "C-M-x tt") 'xcode-xctool-test)
 (define-key xcode-mode-map
-  (kbd "C-c x to") 'xcode-xctool-build-tests-only)
+  (kbd "C-M-x to") 'xcode-xctool-build-tests-only)
 (define-key xcode-mode-map
-  (kbd "C-c x ro") 'xcode-xctool-run-tests-only)
+  (kbd "C-M-x ro") 'xcode-xctool-run-tests-only)
 
 ;; Cleaning
 (define-key xcode-mode-map
-  (kbd "C-c x cc") 'xcode-xctool-clean)
+  (kbd "C-M-x cc") 'xcode-xctool-clean)
 
 ;; Cocoapods
 (define-key xcode-mode-map
-  (kbd "C-c x pi") 'xcode-pod-install)
+  (kbd "C-M-x pi") 'xcode-pod-install)
 
 ;; Opening in Xcode
 (define-key xcode-mode-map
-  (kbd "C-c x os") 'xcode-open-storyboard)
+  (kbd "C-M-x os") 'xcode-open-storyboard)
 (define-key xcode-mode-map
-  (kbd "C-c x op") 'xcode-open-project)
+  (kbd "C-M-x op") 'xcode-open-project)
 (define-key xcode-mode-map
-  (kbd "C-c x ow") 'xcode-open-workspace)
+  (kbd "C-M-x ow") 'xcode-open-workspace)
 
 ;; Archiving
 (define-key xcode-mode-map
-  (kbd "C-c x aa") 'xcode-xctool-archive)
+  (kbd "C-M-x aa") 'xcode-xctool-archive)
 
 ;; Helpers
 (define-key xcode-mode-map
-  (kbd "C-c x dd") 'xcode-delete-derived-data)
+  (kbd "C-M-x dd") 'xcode-delete-derived-data)
 
 ;;; FUNCTIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -347,8 +347,6 @@ Finally fall back to the current directory."
       (if (fboundp 'projectile-project-root)
 	  (projectile-project-root)
 	default-directory)))
-
-
 
 (provide 'xcode-mode)
 ;;; xcode-mode.el ends here

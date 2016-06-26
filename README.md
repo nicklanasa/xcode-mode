@@ -35,22 +35,22 @@ git clone https://github.com/nicklanasa/xcode-mode.git
 
 ## Keybindings
 
-All keybindings start with `C-c x`. All functions in xcode-mode have a two-letter mnemonic shortcut, for instance, to build a project with a `.xctool-args` file in it's root directory you would do `C-c x bb`.
+All keybindings start with `C-M-x`. All functions in xcode-mode have a two-letter mnemonic shortcut, for instance, to build a project with a `.xctool-args` file in it's root directory you would do `C-M-x bb`.
 
 Here are all the keybindings:
 
-* `C-c x rr` runs a project or workspace based on **.xctool-args** on a device based on the `xcode-ios-sim-devicetype` xcode-mode var. Set this to tell xcode-mode what device you want to run the app on. Defaults to `com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.1`
-* `C-c x bb` builds project or workspace based on **.xctool-args**.
-* `C-c x rt` executes the `run-tests` command via `xctool`.
-* `C-c x bt` executes the `build-tests` command via `xctool`.
-* `C-c x cc` cleans the project.
-* `C-c x tt` test project or workspace based on **.xctool-args**.
-* `C-c x aa` archives project or workspace based on **.xctool-args**.
-* `C-c x pi` runs `pod install`.
-* `C-c x os` displays a list of Storyboard's to open in the current directory.
-* `C-c x ow` opens a workspace file in Xcode in the current directory.
-* `C-c x op` opens a project file in Xcode in the current directory.
-* `C-c x dd` displays a list of derived data folders to delete.
+* `C-M-x rr` runs a project or workspace based on **.xctool-args** on a device based on the `xcode-ios-sim-devicetype` xcode-mode var. Set this to tell xcode-mode what device you want to run the app on. Defaults to `com.apple.CoreSimulator.SimDeviceType.iPhone-6, 9.1`
+* `C-M-x bb` builds project or workspace based on **.xctool-args**.
+* `C-M-x rt` executes the `run-tests` command via `xctool`.
+* `C-M-x bt` executes the `build-tests` command via `xctool`.
+* `C-M-x cc` cleans the project.
+* `C-M-x tt` test project or workspace based on **.xctool-args**.
+* `C-M-x aa` archives project or workspace based on **.xctool-args**.
+* `C-M-x pi` runs `pod install`.
+* `C-M-x os` displays a list of Storyboard's to open in the current directory.
+* `C-M-x ow` opens a workspace file in Xcode in the current directory.
+* `C-M-x op` opens a project file in Xcode in the current directory.
+* `C-M-x dd` displays a list of derived data folders to delete.
 
 ## Misc
 
