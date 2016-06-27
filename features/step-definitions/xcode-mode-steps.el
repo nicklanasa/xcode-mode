@@ -13,6 +13,5 @@
        ))
 
 (When "^I open a file \"\\([^\"]+\\)\"$"
-  (lambda (arg)
-		(find-file arg)
-    ))
+      (lambda (arg)
+	(find-file arg)))

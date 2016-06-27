@@ -5,8 +5,6 @@
 
 (add-to-list 'load-path xcode-mode-root-path)
 
-(require 'dash)
-(require 'multiple-cursors)
 (require 'xcode-mode)
 (require 'espuds)
 (require 'ert)
@@ -14,7 +12,6 @@
 (Before
  (switch-to-buffer
   (get-buffer-create "*testing-buffer*"))
- (multiple-cursors-mode 0)
  (erase-buffer)
  (transient-mark-mode 1)
  (cua-mode 0)

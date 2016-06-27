@@ -1,5 +1,4 @@
-.cask
-.ecukes-failing-scenarios
+elpa
 *.DS_Store
 
 examples/test-workspace/test-workspace.xcodeproj/xcuserdata/*

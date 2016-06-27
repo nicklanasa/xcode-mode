@@ -1,7 +1,6 @@
-(source gnu)
 (source melpa)
 
-(package-file "xcode-mode.el")
+(package "xcode-mode" "0.0.1" "Perform Xcode actions in emacs.")
 
 (development
   (depends-on "ecukes")
