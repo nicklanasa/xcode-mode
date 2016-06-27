@@ -1,5 +1,4 @@
 [![MELPA](http://melpa.org/packages/xcode-mode-badge.svg)](http://melpa.org/#/xcode-mode)
-[![MELPA Stable](http://stable.melpa.org/packages/xcode-mode-badge.svg)](http://stable.melpa.org/#/xcode-mode)
 [![Build Status](https://travis-ci.org/nicklanasa/xcode-mode.png?branch=master)](https://travis-ci.org/nicklanasa/xcode-mode)
 
 # xcode-mode
