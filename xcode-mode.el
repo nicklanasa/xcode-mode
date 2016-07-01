@@ -23,6 +23,7 @@
 (require 'cl-lib)
 (require 'subr-x)
 (require 'json)
+(require 'hydra)
 
 (defvar xcode-mode-map
   (make-sparse-keymap)
@@ -53,6 +54,10 @@
   :keymap xcode-mode-map)
 
 ;;; Keybindings ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Hydra
+(define-key xcode-mode-map
+  (kbd"C-M-x h") 'xcode-launcher/body)
 
 ;; Build then run
 (define-key xcode-mode-map
@@ -102,6 +107,22 @@
   (kbd "C-M-x dd") 'xcode-delete-derived-data)
 
 ;;; FUNCTIONS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Hydra
+
+(defhydra xcode-launcher (:color blue :columns 3)
+  "xcode-mode popup menu for commands"
+  ("op" xcode-open-storyboard "Open project")
+  ("ow" xcode-open-workspace "Open workspace")
+  ("os" xcode-open-project "Open storyboard")
+  ("bb" xcode-xctool-build "Build")
+  ("br" xcode-xctool-build "Build and run")
+  ("rr" xcode-xctool-run "Run")
+  ("tt" xcode-xctool-test "Test")
+  ("cc" xcode-xctool-clean "Clean")
+  ("dd" xcode-delete-derived-data "Delete Derived Data")
+  ("dd" xcode-delete-derived-data "Runs pod install")
+  ("q" nil "cancel"))
 
 ;; Interface builder
 
