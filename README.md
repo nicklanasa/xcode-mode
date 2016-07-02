@@ -32,6 +32,16 @@ git clone https://github.com/nicklanasa/xcode-mode.git
 (xcode-mode 1)
 ```
 
+## Hydra (Popup window with command list)
+
+* `C-M-x h` opens the hydra command list popup.
+
+Can also be customized by creating your own bindings
+
+```
+(global-set-key (kbd "s-l") 'xcode-launcher/body)
+```
+
 ## Keybindings
 
 All keybindings start with `C-M-x`. All functions in xcode-mode have a two-letter mnemonic shortcut, for instance, to build a project with a `.xctool-args` file in it's root directory you would do `C-M-x bb`.
