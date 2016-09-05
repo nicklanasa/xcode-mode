@@ -161,14 +161,8 @@
 
 (defun xcode-on-build-finish (buffer desc)
   "Callback function after compilation finishes."
-  (xcode-in-root (compile
-                  (format "ios-sim launch %s --devicetypeid '%s'"
-                          (xcode-completing-read
-                           "Select app: "
-                           (xcode-find-binaries) nil t)
-                          xcode-ios-sim-devicetype)))
+  (xcode-xctool-run)
   (remove-hook 'compilation-finish-functions 'xcode-on-build-finish))
-
 
 ;; Cleaning
 
