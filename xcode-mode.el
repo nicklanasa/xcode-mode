@@ -147,9 +147,12 @@
   (interactive)
   (xcode-in-root (compile
                   (format "ios-sim launch %s --devicetypeid '%s'"
-                          (xcode-completing-read
-                           "Select app: "
-                           (xcode-find-binaries) nil t)
+                          (let ((xcode-binaries (xcode-find-binaries)))
+                            (if (eq 1 (length xcode-binaries))
+                                (car xcode-binaries)
+                              (xcode-completing-read
+                               "Select app: "
+                               xcode-binaries nil t)))
                           xcode-ios-sim-devicetype))))
 
 (defun xcode-xctool-build-and-run ()
@@ -161,14 +164,8 @@
 
 (defun xcode-on-build-finish (buffer desc)
   "Callback function after compilation finishes."
-  (xcode-in-root (compile
-                  (format "ios-sim launch %s --devicetypeid '%s'"
-                          (xcode-completing-read
-                           "Select app: "
-                           (xcode-find-binaries) nil t)
-                          xcode-ios-sim-devicetype)))
+  (xcode-xctool-run)
   (remove-hook 'compilation-finish-functions 'xcode-on-build-finish))
-
 
 ;; Cleaning
 
