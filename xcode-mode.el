@@ -112,16 +112,20 @@
 
 (defhydra xcode-launcher (:color blue :columns 3)
   "xcode-mode popup menu for commands"
+  ("ba" xcode-xctool-archive "Build archive")
+  ("bb" xcode-xctool-build "Build")
+  ("br" xcode-xctool-build-and-run "Build and run")
+  ("bt" xcode-xctool-build-tests "Build tests")
+  ("bT" xcode-xctool-build-tests-only "Build tests only")
+  ("cc" xcode-xctool-clean "Clean")
+  ("dd" xcode-delete-derived-data "Delete Derived Data")
   ("op" xcode-open-storyboard "Open project")
   ("ow" xcode-open-workspace "Open workspace")
   ("os" xcode-open-project "Open storyboard")
-  ("bb" xcode-xctool-build "Build")
-  ("br" xcode-xctool-build "Build and run")
+  ("pi" xcode-pod-install "Runs pod install")
   ("rr" xcode-xctool-run "Run")
+  ("rt" xcode-xctool-run-tests "Run tests")
   ("tt" xcode-xctool-test "Test")
-  ("cc" xcode-xctool-clean "Clean")
-  ("dd" xcode-delete-derived-data "Delete Derived Data")
-  ("dd" xcode-delete-derived-data "Runs pod install")
   ("q" nil "cancel"))
 
 ;; Interface builder
