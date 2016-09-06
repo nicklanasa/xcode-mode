@@ -114,19 +114,19 @@
   "xcode-mode popup menu for commands"
   ("ba" xcode-xctool-archive "Build archive")
   ("bb" xcode-xctool-build "Build")
-  ("br" xcode-xctool-build-and-run "Build and run")
-  ("bt" xcode-xctool-build-tests "Build tests")
-  ("bT" xcode-xctool-build-tests-only "Build tests only")
+  ("br" xcode-xctool-build-and-run "Build and Run")
+  ("bt" xcode-xctool-build-tests "Build Tests")
+  ("bT" xcode-xctool-build-tests-only "Build Tests Only")
   ("cc" xcode-xctool-clean "Clean")
   ("dd" xcode-delete-derived-data "Delete Derived Data")
-  ("op" xcode-open-storyboard "Open project")
-  ("ow" xcode-open-workspace "Open workspace")
-  ("os" xcode-open-project "Open storyboard")
-  ("pi" xcode-pod-install "Runs pod install")
+  ("op" xcode-open-storyboard "Open Project")
+  ("ow" xcode-open-workspace "Open Workspace")
+  ("os" xcode-open-project "Open Storyboard")
+  ("pi" xcode-pod-install "Runs Pod Install")
   ("rr" xcode-xctool-run "Run")
-  ("rt" xcode-xctool-run-tests "Run tests")
+  ("rt" xcode-xctool-run-tests "Run Tests")
   ("tt" xcode-xctool-test "Test")
-  ("q" nil "cancel"))
+  ("q" nil "Cancel"))
 
 ;; Interface builder
 
