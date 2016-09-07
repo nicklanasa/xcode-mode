@@ -110,19 +110,35 @@
 
 ;; Hydra
 
-(defhydra xcode-launcher (:color blue :columns 3)
-  "xcode-mode popup menu for commands"
-  ("op" xcode-open-storyboard "Open project")
-  ("ow" xcode-open-workspace "Open workspace")
-  ("os" xcode-open-project "Open storyboard")
-  ("bb" xcode-xctool-build "Build")
-  ("br" xcode-xctool-build "Build and run")
-  ("rr" xcode-xctool-run "Run")
-  ("tt" xcode-xctool-test "Test")
-  ("cc" xcode-xctool-clean "Clean")
+(defhydra xcode-launcher (:color teal :hint nil)
+  "
+   Xcode: %(xcode-project-directory)
+
+   Build                     Run                     Open
+------------------------------------------------------------------------------------
+  _ba_: Archive             _pi_: Run Pod Install   _op_: Open Project
+  _bb_: Build               _rr_: Run               _os_: Open Storyboard
+  _br_: Build and Run       _rt_: Run Tests         _ow_: Open Workspace
+  _bt_: Builds Tests        _tt_: Run Test
+  _bT_: Builds Tests Only
+  _cc_: Clean
+
+  "
+  ("ba" xcode-xctool-archive)
+  ("bb" xcode-xctool-build)
+  ("br" xcode-xctool-build-and-run)
+  ("bt" xcode-xctool-build-tests)
+  ("bT" xcode-xctool-build-tests-only)
+  ("cc" xcode-xctool-clean)
   ("dd" xcode-delete-derived-data "Delete Derived Data")
-  ("dd" xcode-delete-derived-data "Runs pod install")
-  ("q" nil "cancel"))
+  ("op" xcode-open-storyboard)
+  ("ow" xcode-open-workspace)
+  ("os" xcode-open-project)
+  ("pi" xcode-pod-install)
+  ("rr" xcode-xctool-run)
+  ("rt" xcode-xctool-run-tests)
+  ("tt" xcode-xctool-test)
+  ("q" nil "Cancel"))
 
 ;; Interface builder
 
