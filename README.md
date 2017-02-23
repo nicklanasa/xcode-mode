@@ -119,7 +119,7 @@ $ ./run-tests.sh
 
 Copyright (C) 2015 Nickolas S Lanasa III
 
-Author: Nickolas S Lanasa III <nick@nytekproductions.com>
+Author: Nickolas S Lanasa III <nicklanasa@gmail.com>
 Keywords: Xcode, iOS
 
 This program is free software; you can redistribute it and/or modify
